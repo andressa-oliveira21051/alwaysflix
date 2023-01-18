@@ -5,8 +5,11 @@ import {
   BsWallet2,
   BsHourglassSplit,
   BsFillFileEarmarkTextFill,
+  BsCurrencyDollar
 } from "react-icons/bs";
 import Helmet from 'react-helmet';
+
+
 
 import MovieCard from "../components/MovieCard";
 
@@ -32,6 +35,10 @@ const Movie = () => {
       currency: "USD",
     });
   };
+
+  const precoFilme = (number) => {
+    return number / 1000000
+ }
 
   useEffect(() => {
     const movieUrl = `${moviesURL}${id}?${apiKey}`;
@@ -71,6 +78,14 @@ const Movie = () => {
               <BsFillFileEarmarkTextFill /> Descrição:
             </h3>
             <p>{movie.overview}</p>
+          </div>
+          <div className="info.price">
+            <h3>
+             <BsCurrencyDollar /> Preço do Ingresso: {formatCurrency(precoFilme(movie.budget))}
+            </h3>
+          </div>
+          <div className="cart">
+            <button className="cartButton"> Adicionar ao carrinho </button>           
           </div>
         </>
       )}

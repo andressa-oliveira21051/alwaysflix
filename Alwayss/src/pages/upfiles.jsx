@@ -37,13 +37,13 @@ function Upfile() {
 
   return (
     <div className="one">
-      <input
+      <input className="one"
         type="file"
         onChange={(event) => {
           setImageUpload(event.target.files[0]);
         }}
       />
-      <button onClick={uploadFile}> Upload Image</button>
+      <button className="one" onClick={uploadFile}> Upload Image</button>
       {imageUrls.map((url) => {
         return( <div> <img className="one" src={url} />
 

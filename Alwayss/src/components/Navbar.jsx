@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
-import { signInWithGoogle } from "../Firebase";
-import "./Navbar.css";
-import { FaUserCircle } from "react-icons/fa";
-import { TbFiles } from "react-icons/tb";
-import { ImYoutube } from "react-icons/im";
 
+import "./Navbar.css";
+import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -27,7 +24,6 @@ const Navbar = () => {
         <Link to="/">
           <BiCameraMovie /> AlwaysFlix
         </Link>
-
       </h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -41,18 +37,13 @@ const Navbar = () => {
         </button>      
         
         <Link to="/Login">
-          <FaUserCircle /> <h1>{localStorage.getItem("name")}</h1>
+          <FaUserCircle /> Login
         </Link>
-
-        <Link to="/upfiles">
-          <TbFiles />
-        </Link>
-
-        <Link to="/Parceiros">
-          <ImYoutube />
-        </Link>
-
       </form>
+
+      <Link to="/cart">
+          <FaShoppingCart/>
+        </Link>
 
 
     </nav>
