@@ -1,0 +1,17 @@
+div.one {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  img.one{
+    width: 300px;
+    margin: 10px;
+  }
+
+  h2.one{
+    margin-top: 50px;
+    color: lightslategray;
+  }
